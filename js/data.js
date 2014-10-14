@@ -29,5 +29,5 @@ var energy = {"nodes":[
 {"source":2,"target":10,"value":2195037},
 {"source":2,"target":8,"value":4318430},
 {"source":2,"target":9,"value":1983392},
-{"source":2,"target":11,"value":56100000},
+{"source":2,"target":11,"value":56100000}
 ]}
