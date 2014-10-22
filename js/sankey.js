@@ -273,13 +273,13 @@ d3.sankey = function() {
       });
     });
 
-    function ascendingSourceDepth(a, b) {
-      return a.source.y - b.source.y;
-    }
+    // function ascendingSourceDepth(a, b) {
+    //   return a.source.y - b.source.y;
+    // }
 
-    function ascendingTargetDepth(a, b) {
-      return a.target.y - b.target.y;
-    }
+    // function ascendingTargetDepth(a, b) {
+    //   return a.target.y - b.target.y;
+    // }
   }
 
   function center(node) {
