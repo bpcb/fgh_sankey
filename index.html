@@ -39,11 +39,11 @@
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script type="text/javascript" src="js/sankey.js"></script>
-<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/figure4_data.js"></script>
 <script type="text/javascript">
 
 var margin = {top: 10, right: 300, bottom: 10, left: 300},
-    width = 1000 - margin.left - margin.right,
+    width = 1500 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var formatNumber = d3.format(",.0f"),
@@ -54,8 +54,7 @@ var color = {"Bilateral - Canada": "#FC4E2A",
             "Bilateral - UK": "#FD8D3C",
             "Bilateral - USA": "#FEB24C",
             "Bilaterals - Other": "#FED976",
-            "Bill & Melinda Gates Foundation": "#800026",
-            "GAVI": "#709DC8"
+            "Bill & Melinda Gates Foundation": "#800026"
             };
 
 var svg = d3.select("#chart").append("svg")
