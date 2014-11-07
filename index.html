@@ -50,12 +50,7 @@ var formatNumber = d3.format(",.0f"),
     format = function(d) { return "$" + formatNumber(d); }
 // color = d3.scale.category20()
 
-var color = {"Bilateral - Canada": "#FC4E2A",
-            "Bilateral - UK": "#FD8D3C",
-            "Bilateral - USA": "#FEB24C",
-            "Bilaterals - Other": "#FED976",
-            "Bill & Melinda Gates Foundation": "#800026"
-            };
+var color = {};
 
 var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -138,7 +133,7 @@ var path = sankey.link();
   var stroke_opacity = 0;
   if( d3.select(this).attr("data-clicked") == "1" ){
     d3.select(this).attr("data-clicked","0");
-    stroke_opacity = 0.2;
+    stroke_opacity = 0.3;
   }else{
     d3.select(this).attr("data-clicked","1");
     stroke_opacity = 0.5;
@@ -163,7 +158,9 @@ var path = sankey.link();
       remainingNodes.forEach(function(node) {
         node[step.linkType].forEach(function(link) {
           nextNodes.push(link[step.nodeType]);
-          highlight_link(link.id, stroke_opacity);
+            if (link.source.name == 'GAVI'){
+              highlight_link(link.id, stroke_opacity);
+            }
         });
       });
       remainingNodes = nextNodes;
@@ -172,7 +169,9 @@ var path = sankey.link();
 }
 
 function highlight_link(id,opacity){
-    d3.select("#link-"+id).style("stroke-opacity", opacity);
+    d3.select("#link-"+id)
+      .style("stroke-opacity", opacity)
+      .style("stroke", "#800026");
 }
 
 </script>
