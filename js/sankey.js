@@ -82,6 +82,7 @@ d3.sankey = function() {
     nodes.forEach(function(node) {
       node.sourceLinks = [];
       node.targetLinks = [];
+      node.origin = link
     });
     links.forEach(function(link) {
       var source = link.source,
@@ -257,10 +258,10 @@ d3.sankey = function() {
   }
 
   function computeLinkDepths() {
-    nodes.forEach(function(node) {
-      node.sourceLinks.sort(ascendingTargetDepth);
-      node.targetLinks.sort(ascendingSourceDepth);
-    });
+    // nodes.forEach(function(node) {
+    //   node.sourceLinks.sort(ascendingTargetDepth);
+    //   node.targetLinks.sort(ascendingSourceDepth);
+    // });
     nodes.forEach(function(node) {
       var sy = 0, ty = 0;
       node.sourceLinks.forEach(function(link) {
@@ -273,13 +274,13 @@ d3.sankey = function() {
       });
     });
 
-    function ascendingSourceDepth(a, b) {
-      return a.source.y - b.source.y;
-    }
+    // function ascendingSourceDepth(a, b) {
+    //   return a.source.y - b.source.y;
+    // }
 
-    function ascendingTargetDepth(a, b) {
-      return a.target.y - b.target.y;
-    }
+    // function ascendingTargetDepth(a, b) {
+    //   return a.target.y - b.target.y;
+    // }
   }
 
   function center(node) {
