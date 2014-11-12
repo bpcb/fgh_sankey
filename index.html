@@ -39,18 +39,18 @@
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script type="text/javascript" src="js/sankey.js"></script>
-<script type="text/javascript" src="js/figure2_data_origin.js"></script>
+<script type="text/javascript" src="js/figure2_data_joe.js"></script>
 <script type="text/javascript"> 
 
-var margin = {top: 10, right: 300, bottom: 10, left: 300},
-    width = 1500 - margin.left - margin.right,
+var margin = {top: 10, right: 300, bottom: 10, left: 100},
+    width = 1200 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var formatNumber = d3.format(",.0f"),
     format = function(d) { return "$" + formatNumber(d); }
 // color = d3.scale.category20()
 
-var color = {"USA": "#800026"};
+var color = {"United States": "#800026"};
 
 var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)

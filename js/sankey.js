@@ -165,12 +165,12 @@ d3.sankey = function() {
     //
     initializeNodeDepth();
     resolveCollisions();
-    for (var alpha = 1; iterations > 0; --iterations) {
-      relaxRightToLeft(alpha *= .99);
-      resolveCollisions();
-      relaxLeftToRight(alpha);
-      resolveCollisions();
-    }
+    // for (var alpha = 1; iterations > 0; --iterations) {
+    //   relaxRightToLeft(alpha *= .99);
+    //   resolveCollisions();
+    //   relaxLeftToRight(alpha);
+    //   resolveCollisions();
+    // }
 
     function initializeNodeDepth() {
       var ky = d3.min(nodesByBreadth, function(nodes) {
